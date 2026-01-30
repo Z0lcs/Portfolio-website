@@ -339,8 +339,71 @@ img {
 }
 
 /*=============== ABOUT ===============*/
+.about__container {
+  row-gap: 4rem;
+}
 
+.about__content {
+  display: grid;
+  row-gap: 3rem;
+}
 
+.about__data{
+  text-align: center;
+}
+
+.about__description{
+  margin-bottom: 3rem;
+}
+
+.about__subtitle{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.about__items{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.about__item{
+  background-color: var(--first-color);
+  padding: .5rem .75rem;
+  border-radius: 2rem;
+  color: var(--black-color);
+  border: 2px solid var(--body-color);
+  cursor: default;
+  transition: background-color .4s, border-color .4s;
+}
+
+.about__item:hover{
+  background-color: var(--body-color);
+  color: var(--first-color);
+  border-color: var(--first-color);
+}
+
+.about__image{
+  width: 240px;
+  height: 240px;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  justify-self: center;
+  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 50%, .3);
+}
+
+.about__img{
+  width: 200px;
+}
 /*=============== PROJECTS ===============*/
 
 
@@ -365,17 +428,17 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (min-width: 540px) {
-  .home__container {
+  .home__container, .about__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
 
-  .home__image {
+  .home__image,.about__image {
     width: 200px;
     height: 200px;
   }
 
-  .home__img {
+  .home__img, .about__img {
     width: 170px;
   }
 
@@ -390,7 +453,7 @@ img {
 
 /* For medium devices */
 @media screen and (min-width: 768px) {
-  .home__container {
+  .home__container, .about__container {
     grid-template-columns: repeat(2, 350px);
     justify-content: center;
   }
@@ -399,12 +462,12 @@ img {
     text-align: initial;
   }
 
-  .home__image {
+  .home__image,.about__image {
     width: 300px;
     height: 300px;
   }
 
-  .home__img {
+  .home__img, .about__img{
     width: 240px;
   }
 
@@ -422,7 +485,7 @@ img {
 /* For large devices */
 @media screen and (min-width: 1150px) {
 
-  .container {
+  .container{
     margin-inline: auto;
   }
 
@@ -436,17 +499,26 @@ img {
     column-gap: 4rem;
   }
 
-  .home__container {
-    grid-template-columns: 400px 400px;
+  .home__container{
+    grid-template-columns: 400px 480px;
     justify-content: center;
   }
 
-  .home__image {
+  .about__container{
+    grid-template-columns: 540px 400px;
+    padding: 3rem 2rem;
+    column-gap: 3rem;
+  }
+
+  .about__content{
+
+  }
+  .home__image,.about__image {
     width: 400px;
     height: 400px;
   }
 
-  .home__img {
+  .home__img, .about__img {
     width: 340px;
   }
 
@@ -458,6 +530,7 @@ img {
   .home__link {
     font-size: 4rem;
   }
+
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
