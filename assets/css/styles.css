@@ -232,16 +232,111 @@ img {
 
 
 /* Add shadow header */
-
+.shadow-header {
+  box-shadow: 0 5px 32px var(--first-color);
+}
 
 /* Active link */
 
 
 /*=============== HOME ===============*/
+.home__container {
+  row-gap: 4rem;
+  padding-block: 2.5rem 2rem;
 
+}
+
+.home__content {
+  position: relative;
+  justify-self: center;
+}
+
+.home__image {
+  width: 240px;
+  height: 240px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: 5px solid var(--first-color);
+  box-shadow: 0 8px 32px hsl(var(--hue), 80%, 44%, .3)
+}
+
+.home__img {
+  /*Hülyesség xd*/
+  width: 200px;
+}
+
+.home__social {
+  position: absolute;
+  top: 1rem;
+  left: -4rem;
+  display: grid;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+
+.home__link {
+  color: var(--white-color);
+  font-size: 2.5rem;
+  transform: transfrom .4s, color .4s;
+}
+
+.home__link:hover {
+  transform: translateY(-0.5rem);
+  color: var(--first-color);
+}
+
+.home__data {
+  text-align: center;
+  row-gap: 1rem;
+}
+
+.home__subtitle span {
+  color: var(--first-color);
+}
+
+.home__title {
+  color: var(--first-color);
+  font-size: var(--bigger-font-size);
+}
+
+.home__button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+  margin: 2rem;
+}
 
 /*=============== BUTTON ===============*/
 
+.button {
+  display: inline-block;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--black-color);
+  font-weight: var(--font-medium);
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  transition: box-shadow .4s, color .4s;
+}
+
+.button:hover {
+  box-shadow: 0 8px 24px hsla(var(--hue), 80%, 50%, .3);
+}
+
+.button__ghost {
+  background-color: var(--body-color);
+  color: var(--white-color);
+  border: 2px solid var(--first-color);
+}
+
+.button__ghost:hover {
+  background-color: var(--first-color);
+}
 
 /*=============== ABOUT ===============*/
 
@@ -269,25 +364,99 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (min-width: 540px) {
+  .home__container {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
 
+  .home__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home__img {
+    width: 170px;
+  }
+
+  .home__social {
+    top: 1rem;
+  }
+
+  .home__link {
+    font-size: 2rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 768px) {
+  .home__container {
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
+  }
+
+  .home__data {
+    text-align: initial;
+  }
+
+  .home__image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .home__img {
+    width: 240px;
+  }
+
+  .home__social {
+    top: 1.5rem;
+    left: -4rem;
+  }
+
+  .home__link {
+    font-size: 3rem;
+  }
+}
 
 
 /* For large devices */
 @media screen and (min-width: 1150px) {
 
-  .container{
+  .container {
     margin-inline: auto;
   }
+
   .nav_toggle,
   .nav_close {
     display: none;
   }
 
-  .nav_list{
+  .nav_list {
     flex-direction: row;
     column-gap: 4rem;
+  }
+
+  .home__container {
+    grid-template-columns: 400px 400px;
+    justify-content: center;
+  }
+
+  .home__image {
+    width: 400px;
+    height: 400px;
+  }
+
+  .home__img {
+    width: 340px;
+  }
+
+  .home__social {
+    top: 2.5rem;
+    left: -5.5rem;
+  }
+
+  .home__link {
+    font-size: 4rem;
   }
 }
 
