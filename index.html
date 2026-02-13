@@ -4,240 +4,217 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <!--=============== FAVICON ===============-->
-   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
-   <!--=============== REMIXICONS ===============-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-   <!--=============== CSS ===============-->
-   <link rel="stylesheet" href="assets/css/styles.css">
-
-   <title>Responsive portfolio website</title>
+   <title>Arany Zoltán | Portfólió</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-   <!--==================== HEADER ====================-->
-   <header class="header" id="header">
-      <nav class="nav container">
-         <a href="" class="nav_logo">AZ</a>
-         <div class="nav_menu" id="nav-menu">
-            <ul class="nav_list">
-               <li><a href="#home" class="nav_link">Home</a></li>
-               <li><a href="#about" class="nav_link">About</a></li>
-               <li><a href="#projects" class="nav_link">Projects</a></li>
-               <li><a href="#resume" class="nav_link">Resume</a></li>
-               <li><a href="#contact" class="nav_link">Contact</a></li>
+
+   <header>
+      <div class="container nav-container">
+         <a href="#hero" class="logo">DEV_PORTFOLIO<span>_</span></a>
+         <button class="hamburger" id="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+         </button>
+         <nav class="nav-links" id="nav-links">
+            <ul>
+               <li><a href="#hero">Kezdőlap</a></li>
+               <li><a href="#projects">Projektek</a></li>
+               <li><a href="#skills">Készségek</a></li>
+               <li><a href="#cv">Önéletrajz</a></li>
+               <li><a href="#contact">Kapcsolat</a></li>
             </ul>
-            <div class="nav_close" id="nav-close">
-               <i class="ri-close-line"></i>
-            </div>
-         </div>
-         <div class="nav_toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-         </div>
-      </nav>
+         </nav>
+      </div>
    </header>
 
-   <!--==================== MAIN ====================-->
-   <main class="main">
-      <!--==================== HOME ====================-->
-      <section class="home section" id="home">
-         <div class="home__container container grid">
-            <div class="home__content">
-               <div class="home__image">
-                  <img src="assets/img/home-perfil.png" alt="image" class="home__img">
-               </div>
-               <div class="home__social">
-                  <a class="home__link" target="_blank" href="https://www.linkedin.com/"><i
-                        class="ri-linkedin-box-fill"></i></a>
-                  <a class="home__link" target="_blank" href="https://github.com/a"><i class="ri-github-fill"></i></a>
-                  <a class="home__link" target="_blank" href="https://dribbble.com/"><i
-                        class="ri-dribbble-line"></i></a>
-               </div>
+   <main>
+      <section id="hero" class="hero-section fade-in">
+    <div class="container hero-content">
+        <div class="hero-tag">Rendszerbetöltés kész...</div>
+        <h1>ARANY ZOLTÁN</h1>
+        <h2 class="glitch" data-text="Junior Webfejlesztő // Full-Stack Tanuló">
+            Junior Webfejlesztő // Full-Stack Tanuló
+        </h2>
+        <p>
+            Digitális világok építése kóddal. Legyen szó modern webes felületekről, 
+            Unity alapú szimulációkról vagy Godot játékfejlesztésről, a célom a tiszta és hatékony megoldások létrehozása.
+        </p>
+        <div class="hero-btns">
+            <a href="#projects" class="btn-neon">Munkáim megtekintése</a>
+            <a href="#contact" class="btn-neon">Kapcsolat</a>
+        </div>
+    </div>
+</section>
+
+      <section id="projects" class="section-pad">
+         <div class="container fade-in">
+            <h2 class="section-title">Projektek_</h2>
+            <div class="projects-grid">
+               <article class="project-card">
+                  <h3>Space duck</h3>
+                  <p>Egy Unity környezetben fejlesztett 3D szimulációs projekt.</p>
+                  <div class="card-links">
+                     <a href="https://github.com/Z0lcs/SPACE-DUCK" target="_blank" class="btn-git">GitHub Kód</a>
+                  </div>
+               </article>
+               <article class="project-card">
+                  <h3>Damareen</h3>
+                  <p>C# nyelven írt konzolos stratégiai játék, amely komplex játékszabályokon és véletlenszerű eseménygeneráláson alapul.</p>
+                  <div class="card-links">
+                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                  </div>
+               </article>
+               <article class="project-card">
+                  <h3>Álomváros</h3>
+                  <p>Egy adatkezelő szoftver, amely lehetővé teszi a felhasználók számára, hogy saját virtuális elemeiket (pl. épületek, erőforrások) rendszerezzék és mentsék.</p>
+                  <div class="card-links">
+                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                  </div>
+               </article>
+               <article class="project-card">
+                  <h3>Godot game</h3>
+                  <p>Godot motorral készült, precíziós platformer játék, amely a játékosok reflexeit és türelmét teszi próbára.</p>
+                  <div class="card-links">
+                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                  </div>
+               </article>
             </div>
-            <div class="home__data grid">
-               <p class="home__subtitle">
-                  Hi, I'm a <span id="home-subtitle"></span>
-               </p>
-               <h1 class="home__title">Arany Zoltán</h1>
-               <p class="home__description">Web developer and designer based in Lima, Peru, specializing
-                  in creating websites for businesses. See my portfolio, which
-                  includes modern websites, designs, and more.</p>
-               <div class="home__buttons">
-                  <a href="assets/pdf/Kai-Cv.pdf" class="button">Download</a>
-                  <a href="" class="button button__ghost">Projects</a>
+         </div>
+      </section>
+
+      <section id="skills" class="section-pad bg-darker">
+         <div class="container fade-in">
+            <h2 class="section-title">Technikai Készségek_</h2>
+            <div class="skills-grid">
+               <div class="skill-item">
+                  <label>HTML5 / CSS3</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 90%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>JavaScript (ES6+)</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 25%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Python</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 95%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>C#</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 50%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Figma</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 45%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Blender</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 85%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Gimp</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 35%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Unity</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 85%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Godot</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 45%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Github</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 90%"></div>
+                  </div>
+               </div>
+               <div class="skill-item">
+                  <label>Microsoft Offcie</label>
+                  <div class="progress-bar">
+                     <div class="progress" style="width: 100%"></div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+
+      <section id="cv" class="section-pad">
+         <div class="container fade-in">
+            <h2 class="section-title">Szakmai Út_</h2>
+            <div class="timeline">
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                     <span class="timeline-date">2023 - Jelenleg</span>
+                     <h3>Szoftverfejlesztő és tesztelö technikus</h3>
+                     <p>Debreceni SZC Mechwart András Gépipari és Informatikai Technikum</p>
+                  </div>
+               </div>
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                     <span class="timeline-date">2015 - 2023</span>
+                     <h3>Általános iskola</h3>
+                     <p>Derecskei Bocskai István Általános Iskola</p>
+                  </div>
                </div>
             </div>
          </div>
       </section>
 
-      <!--==================== ABOUT ====================-->
-      <section class="about section" id="about">
-         <div class="about__container container grid">
-            <div class="about__content">
-               <div class="about__data">
-                  <h2 class="section__title">🦆About me🦆</h2>
-                  <p class="about__description">
-                     I am a web developer and designer specializing in creating
-                     modern, functional, and visually appealing websites. I combine
-                     creativity and functionality to transform ideas into intuitive
-                     interfaces, balancing design, usability, and quality code.
-                  </p>
-                  <a href="" class="button button__ghost">Contact me</a>
+      <section id="contact" class="section-pad bg-darker">
+         <div class="container fade-in">
+            <h2 class="section-title">Kapcsolatfelvétel_</h2>
+            <form id="contact-form" class="neon-form">
+               <div class="form-group">
+                  <label>Név:</label>
+                  <input type="text" id="name" required placeholder="Gipsz Jakab">
                </div>
-               <div class="about__skills">
-                  <h3 class="about__subtitle">
-                     <i class="ri-bookmark-fill"></i>
-                     <span>Skills</span>
-                  </h3>
-                  <ul class="about__items">
-                     <li class="about__item">HTML & CSS</li>
-                     <li class="about__item">JavaScript</li>
-                     <li class="about__item">Python</li>
-                     <li class="about__item">C#</li>
-
-                     <li class="about__item">Figma</li>
-                     <li class="about__item">Blender</li>
-                     <li class="about__item">Gimp</li>
-
-                     <li class="about__item">Unity</li>
-                     <li class="about__item">Godot🤮</li>
-                     <li class="about__item">GitHub</li>
-                     <li class="about__item">Microsoft Office</li>
-                  </ul>
+               <div class="form-group">
+                  <label>Email:</label>
+                  <input type="email" id="email" required placeholder="minta@email.com">
                </div>
-            </div>
-            <div class="about__image">
-               <img src="assets/img/about-perfil.png" alt="about img" class="about__img">
-            </div>
-         </div>
-      </section>
-
-      <!--==================== PROJECTS ====================-->
-      <section class="projects section" id="projects">
-         <h2 class="section__title">Projects</h2>
-         <div class="projects__container container grid">
-            <article class="project__card">
-               <img src="assets/img/project-1.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     Travel Website
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
+               <div class="form-group">
+                  <label>Üzenet:</label>
+                  <textarea id="message" rows="5" required></textarea>
                </div>
-            </article>
-            <article class="project__card">
-               <img src="assets/img/project-2.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     Gym Website
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
-               </div>
-            </article>
-            <article class="project__card">
-               <img src="assets/img/project-3.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     Coffee Website
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
-               </div>
-            </article>
-            <article class="project__card">
-               <img src="assets/img/project-4.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     Business Design
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
-               </div>
-            </article>
-            <article class="project__card">
-               <img src="assets/img/project-5.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     Food Design
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
-               </div>
-            </article>
-            <article class="project__card">
-               <img src="assets/img/project-6.png" alt="" class="projects__img">
-               <div class="projects__data">
-                  <h1 class="projects__title">
-                     IA Website & Design
-                  </h1>
-                  <p class="projects__description">
-                     Creation, design and development of a website for a user.
-                  </p>
-                  <a href="#" target="_blank" class="button button__ghost">View project</a>
-               </div>
-            </article>
-         </div>
-      </section>
-
-      <!--==================== RESUME ====================-->
-      <section class="resume section" id="resume">
-
-      </section>
-
-      <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact">
-         <h2 class="section__title">🦆Duck me🦆</h2>
-         <div class="contant__container container grid">
-            <from class="contact__form grid" id="contact-form">
-               <input type="text" name="user_name" class="contact__input" placeholder="Name">
-               <input type="email" name="user_email" class="contact__input" placeholder="Email">
-               <textarea name="user_message" class="contact__input contact__area"
-                  placeholder="Write your message here..."></textarea>
-               <button type="submit" class="button" onclick="sendEmail()">Send duck</button>
-               <p class="contact__message" id="contact-message"></p>
-            </from>
-            <div class="contact__content grid">
-               <div class="contact__data grid"></div>
-               <div class="contact__social"></div>
-            </div>
+               <button type="submit" class="btn-neon" style="width: 100%;">Küldés ></button>
+               <p id="form-feedback"></p>
+            </form>
          </div>
       </section>
    </main>
 
-   <!--==================== FOOTER ====================-->
-   <footer class="footer">
-
+   <footer>
+      <p>© 2026 Arany Zoltán | Minden jog fenntartva.</p>
    </footer>
 
-   <!--========== SCROLL UP ==========-->
-
-
-   <!--=============== SCROLLREVEAL ===============-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
-
-   <!--=============== TYPED JS ===============-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
-
-   <!--=============== EMAIL JS ===============-->
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-   <!--=============== MAIN JS ===============-->
-   <script src="assets/js/main.js"></script>
+   <script src="main.js"></script>
 </body>
 
 </html>
