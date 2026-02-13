@@ -36,7 +36,10 @@ body {
     margin: 0 auto;
 }
 
-h1, h2, h3, .logo {
+h1,
+h2,
+h3,
+.logo {
     font-family: var(--font-heading);
     color: var(--neon-green);
     text-transform: uppercase;
@@ -47,12 +50,12 @@ h1, h2, h3, .logo {
 }
 
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    border-bottom: 2px solid var(--neon-green);
-    display: inline-block;
-    padding-bottom: 5px;
+    font-size: clamp(1.5rem, 6vw, 2.5rem); /* Dinamikusan méreteződik */
+    max-width: 100%;
+    word-wrap: break-word; /* Ha túl hosszú a szó, eltöri */
     text-shadow: var(--neon-glow);
+    margin-bottom: 2rem;
+    text-decoration: underline;
 }
 
 .bg-darker {
@@ -104,7 +107,6 @@ header {
     text-shadow: var(--neon-glow);
 }
 
-/* Hamburger Ikon */
 .hamburger {
     display: none;
     background: none;
@@ -121,6 +123,13 @@ header {
     transition: 0.4s;
 }
 
+.nav-links a.active-link {
+    color: var(--neon-green);
+    border-bottom: 2px solid var(--neon-green);
+    text-shadow: var(--neon-glow);
+    padding-bottom: 5px;
+}
+
 /* ----- HERO SZEKCIÓ ----- */
 .hero-section {
     height: 100vh;
@@ -130,10 +139,18 @@ header {
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: clamp(2rem, 8vw, 4rem);
-    margin-bottom: 15px;
-    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+.hero-content h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: var(--text-light);
+    margin: 0 auto 30px auto; 
+    border-right: 2px solid var(--neon-green);
+    display: block; 
+    width: fit-content;
+    max-width: 90%; 
+    
+    white-space: normal; 
+    overflow: visible;
+    animation: blink-caret .75s step-end infinite;
 }
 
 .btn-neon {
@@ -145,6 +162,7 @@ header {
     font-family: var(--font-heading);
     margin-top: 20px;
     transition: var(--transition);
+    background: transparent;
 }
 
 .btn-neon:hover {
@@ -199,7 +217,8 @@ header {
     height: 100%;
     background: var(--neon-green);
     box-shadow: var(--neon-glow);
-    width: 0; /* JS állítja be */
+    width: 0;
+    /* JS állítja be */
     transition: width 1.5s ease-out;
 }
 
@@ -242,7 +261,8 @@ header {
     margin-bottom: 15px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
     background: #050505;
@@ -258,8 +278,8 @@ header {
 /* ----- ANIMÁCIÓK ----- */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s all ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in.visible {
@@ -269,8 +289,10 @@ header {
 
 /* ----- MOBIL NÉZET ----- */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
-    
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
         right: -100%;
@@ -281,7 +303,9 @@ header {
         transition: 0.3s;
     }
 
-    .nav-links.active { right: 0; }
+    .nav-links.active {
+        right: 0;
+    }
 
     .nav-links ul {
         flex-direction: column;
@@ -289,16 +313,47 @@ header {
         padding-top: 50px;
     }
 
-    .nav-links li { margin: 20px 0; }
+    .nav-links li {
+        margin: 20px 0;
+    }
 
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .container {
+        width: 85%; /* Több hely a széleken */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h2 {
+        white-space: normal; /* Mobilon ne legyen írógép effekt, mert szétnyomja a képernyőt */
+        animation: blink-caret .75s step-end infinite;
+        border-right: none;
+        text-align: center;
+    }
+
+    /* Megakadályozzuk, hogy a szekciócímek lelógjanak */
+    .section-title {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
 }
 
-/* Keresd meg a .card-links a részt, vagy add hozzá ezt: */
-.card-links a, .project-card a {
-    color: var(--neon-green); /* Használja a már beállított zöldet */
+.card-links a,
+.project-card a {
+    color: var(--neon-green);
     text-decoration: none;
     font-weight: bold;
     font-size: 0.85rem;
@@ -313,17 +368,21 @@ header {
     border-bottom: 1px solid var(--neon-green);
 }
 
-/* A kártya belső elrendezése, hogy a gomb az aljára kerüljön */
+.ri-github-fill {
+    position: relative;
+    top: .2rem;
+    font-size: 1.7rem;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ez tolja le a tartalmat az aljára */
-    min-height: 350px; /* Opcionális: legyen minden kártya egyforma magas */
+    justify-content: space-between;
+    min-height: 350px;
     position: relative;
     padding: 25px;
 }
 
-/* A gomb stílusa */
 .btn-git {
     display: inline-block;
     padding: 8px 16px;
@@ -335,13 +394,11 @@ header {
     text-transform: uppercase;
     transition: all 0.3s ease;
     background: transparent;
-    
-    /* Pozicionálás a bal alsó sarokba a paddingen belül */
-    align-self: flex-start; 
-    margin-top: auto; 
+
+    align-self: flex-start;
+    margin-top: auto;
 }
 
-/* Gomb hover effekt */
 .btn-git:hover {
     background: var(--neon-green);
     color: #000;
@@ -354,9 +411,8 @@ footer {
     padding: 30px 0;
     border-top: 1px solid rgba(57, 255, 20, 0.3);
     margin-top: 80px;
-    
-    /* Ez a lényeg: */
-    text-align: center; 
+
+    text-align: center;
     width: 100%;
 }
 
@@ -364,7 +420,7 @@ footer p {
     color: var(--text-muted);
     font-size: 0.85rem;
     font-family: var(--font-body);
-    margin: 0; /* Megszünteti az esetleges elcsúszást okozó margókat */
+    margin: 0;
 }
 
 .hero-section {
@@ -396,15 +452,21 @@ footer p {
 }
 
 .hero-content h2 {
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(0.9rem, 3.5vw, 1.5rem); /* Kisebb betűméret mobilon */
     color: var(--text-light);
-    margin-bottom: 30px;
-    border-right: 2px solid var(--neon-green); /* Írógép kurzor effekt */
+    margin: 0 auto 30px auto;
+    border-right: 2px solid var(--neon-green);
     display: inline-block;
     padding-right: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    
+    /* VÁLTOZÁS: Mobilon engedjük a törést, ha nagyon muszáj */
+    white-space: normal; 
+    width: auto;
+    max-width: 100%;
+    overflow: visible;
+    
+    /* Az animációt asztali nézetre korlátozzuk lentebb */
+    animation: blink-caret .75s step-end infinite;
 }
 
 .hero-content p {
@@ -414,7 +476,6 @@ footer p {
     line-height: 1.8;
 }
 
-/* Gombok elrendezése */
 .hero-btns {
     display: flex;
     gap: 20px;
@@ -437,13 +498,24 @@ footer p {
     box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.2);
 }
 
-/* Írógép animáció */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--neon-green) }
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--neon-green)
+    }
 }

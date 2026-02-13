@@ -8,14 +8,21 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
       rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
    <link rel="stylesheet" href="styles.css">
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script type="text/javascript">
+      (function () {
+         emailjs.init("2wdZeM2a3phUPdOaT");
+      })();
+   </script>
 </head>
 
 <body>
 
    <header>
       <div class="container nav-container">
-         <a href="#hero" class="logo">DEV_PORTFOLIO<span>_</span></a>
+         <a href="#hero" class="logo">AZ</a>
          <button class="hamburger" id="hamburger-btn">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -35,62 +42,71 @@
 
    <main>
       <section id="hero" class="hero-section fade-in">
-    <div class="container hero-content">
-        <div class="hero-tag">Rendszerbetöltés kész...</div>
-        <h1>ARANY ZOLTÁN</h1>
-        <h2 class="glitch" data-text="Junior Webfejlesztő // Full-Stack Tanuló">
-            Junior Webfejlesztő // Full-Stack Tanuló
-        </h2>
-        <p>
-            Digitális világok építése kóddal. Legyen szó modern webes felületekről, 
-            Unity alapú szimulációkról vagy Godot játékfejlesztésről, a célom a tiszta és hatékony megoldások létrehozása.
-        </p>
-        <div class="hero-btns">
-            <a href="#projects" class="btn-neon">Munkáim megtekintése</a>
-            <a href="#contact" class="btn-neon">Kapcsolat</a>
-        </div>
-    </div>
-</section>
+         <div class="container hero-content">
+            <div class="hero-tag">Rendszerbetöltés kész...</div>
+            <h1>ARANY ZOLTÁN</h1>
+            <h2 class="glitch" data-text="Junior Webfejlesztő // Full-Stack Tanuló">
+               Junior Webfejlesztő // Full-Stack Tanuló
+            </h2>
+            <p>
+               Digitális világok építése kóddal. Legyen szó modern webes felületekről,
+               Unity alapú szimulációkról vagy Godot játékfejlesztésről, a célom a tiszta és hatékony megoldások
+               létrehozása.
+            </p>
+            <div class="hero-btns">
+               <a href="#projects" class="btn-neon">Munkáim megtekintése</a>
+               <a href="#contact" class="btn-neon">Kapcsolat</a>
+            </div>
+         </div>
+      </section>
 
-      <section id="projects" class="section-pad">
+      <section id="projects" class="section-pad fade-in">
          <div class="container fade-in">
-            <h2 class="section-title">Projektek_</h2>
+            <h2 class="section-title">Projektek</h2>
             <div class="projects-grid">
                <article class="project-card">
                   <h3>Space duck</h3>
                   <p>Egy Unity környezetben fejlesztett 3D szimulációs projekt.</p>
                   <div class="card-links">
-                     <a href="https://github.com/Z0lcs/SPACE-DUCK" target="_blank" class="btn-git">GitHub Kód</a>
+                     <a href="https://github.com/Z0lcs/SPACE-DUCK" target="_blank" class="btn-git">GitHub <i
+                           class="ri-github-fill"></i></a>
+
                   </div>
                </article>
                <article class="project-card">
                   <h3>Damareen</h3>
-                  <p>C# nyelven írt konzolos stratégiai játék, amely komplex játékszabályokon és véletlenszerű eseménygeneráláson alapul.</p>
+                  <p>C# nyelven írt konzolos stratégiai játék, amely komplex játékszabályokon és véletlenszerű
+                     eseménygeneráláson alapul.</p>
                   <div class="card-links">
-                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                     <a href="https://github.com/Z0lcs/DurumDareem" target="_blank" class="btn-git">GitHub <i
+                           class="ri-github-fill"></i></a>
                   </div>
                </article>
                <article class="project-card">
                   <h3>Álomváros</h3>
-                  <p>Egy adatkezelő szoftver, amely lehetővé teszi a felhasználók számára, hogy saját virtuális elemeiket (pl. épületek, erőforrások) rendszerezzék és mentsék.</p>
+                  <p>Egy adatkezelő szoftver, amely lehetővé teszi a felhasználók számára, hogy saját virtuális
+                     elemeiket (pl. épületek, erőforrások) rendszerezzék és mentsék.</p>
                   <div class="card-links">
-                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                     <a href="https://github.com/Z0lcs/404-n0t-f0und" target="_blank" class="btn-git">GitHub <i
+                           class="ri-github-fill"></i></a>
                   </div>
                </article>
                <article class="project-card">
                   <h3>Godot game</h3>
-                  <p>Godot motorral készült, precíziós platformer játék, amely a játékosok reflexeit és türelmét teszi próbára.</p>
+                  <p>Godot motorral készült, precíziós platformer játék, amely a játékosok reflexeit és türelmét teszi
+                     próbára.</p>
                   <div class="card-links">
-                     <a href="IDE_A_LINK" target="_blank" class="btn-git">GitHub Kód</a>
+                     <a href="https://github.com/Z0lcs/NagyonGodotosJatek2" target="_blank" class="btn-git">GitHub <i
+                           class="ri-github-fill"></i></a>
                   </div>
                </article>
             </div>
          </div>
       </section>
 
-      <section id="skills" class="section-pad bg-darker">
+      <section id="skills" class="section-pad fade-in bg-darker">
          <div class="container fade-in">
-            <h2 class="section-title">Technikai Készségek_</h2>
+            <h2 class="section-title">Technikai Készségek</h2>
             <div class="skills-grid">
                <div class="skill-item">
                   <label>HTML5 / CSS3</label>
@@ -153,7 +169,7 @@
                   </div>
                </div>
                <div class="skill-item">
-                  <label>Microsoft Offcie</label>
+                  <label>Microsoft Office</label>
                   <div class="progress-bar">
                      <div class="progress" style="width: 100%"></div>
                   </div>
@@ -163,10 +179,19 @@
          </div>
       </section>
 
-      <section id="cv" class="section-pad">
+      <section id="cv" class="section-pad fade-in">
          <div class="container fade-in">
-            <h2 class="section-title">Szakmai Út_</h2>
+            <h2 class="section-title">Szakmai Út</h2>
             <div class="timeline">
+               <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                     <span class="timeline-date">20XX - 20XX</span>
+                     <h3>Mérnök informatikus</h3>
+                     <p>BME/ELTE/DE</p>
+                  </div>
+               </div>
+
                <div class="timeline-item">
                   <div class="timeline-dot"></div>
                   <div class="timeline-content">
@@ -175,6 +200,7 @@
                      <p>Debreceni SZC Mechwart András Gépipari és Informatikai Technikum</p>
                   </div>
                </div>
+
                <div class="timeline-item">
                   <div class="timeline-dot"></div>
                   <div class="timeline-content">
@@ -183,25 +209,26 @@
                      <p>Derecskei Bocskai István Általános Iskola</p>
                   </div>
                </div>
+
             </div>
          </div>
       </section>
 
-      <section id="contact" class="section-pad bg-darker">
+      <section id="contact" class="section-pad fade-in bg-darker">
          <div class="container fade-in">
-            <h2 class="section-title">Kapcsolatfelvétel_</h2>
+            <h2 class="section-title">Kapcsolatfelvétel</h2>
             <form id="contact-form" class="neon-form">
                <div class="form-group">
                   <label>Név:</label>
-                  <input type="text" id="name" required placeholder="Gipsz Jakab">
+                  <input type="text" id="name" name="user_name" required placeholder="Gipsz Jakab">
                </div>
                <div class="form-group">
                   <label>Email:</label>
-                  <input type="email" id="email" required placeholder="minta@email.com">
+                  <input type="email" id="email" name="user_email" required placeholder="minta@email.com">
                </div>
                <div class="form-group">
                   <label>Üzenet:</label>
-                  <textarea id="message" rows="5" required></textarea>
+                  <textarea id="message" name="user_message" rows="5" required></textarea>
                </div>
                <button type="submit" class="btn-neon" style="width: 100%;">Küldés ></button>
                <p id="form-feedback"></p>

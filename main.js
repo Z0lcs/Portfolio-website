@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. HAMBURGER MENÜ
+    // ----- MOBIL MENÜ KEZELÉSE -----
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
-    // Linkre kattintáskor bezárjuk a menüt
+    // Menü bezárása kattintás után
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -17,50 +17,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. GÖRGETÉSRE MEGJELENÉS ÉS SKILLS ANIMÁCIÓ
-    const observerOptions = {
-        threshold: 0.2
-    };
-
+    // ----- EGYSZERŰ MEGJELENÉS (FADE-IN) -----
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
-                // Ha a skills szekció jön be, elindítjuk a progress barokat
-                if (entry.target.id === 'skills') {
-                    animateSkills();
-                }
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
+    // Figyeljük a fade-in osztályú elemeket
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    function animateSkills() {
-        document.querySelectorAll('.progress').forEach(bar => {
-            // A HTML-ben style="width: XX%" formában megadott értéket használjuk
-            const targetWidth = bar.getAttribute('style').split(':')[1];
-            bar.style.width = '0'; // Alaphelyzetbe
-            setTimeout(() => {
-                bar.style.width = targetWidth; // Beúsztatás
-            }, 100);
-        });
-    }
-
-    // 3. KAPCSOLATŰRLAP VALIDÁCIÓ
+    // ----- EMAILJS -----
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const feedback = document.getElementById('form-feedback');
-            
-            // Egyszerű szimuláció
-            feedback.textContent = "Üzenet elküldve! Köszönöm.";
-            feedback.style.color = "#39ff14";
-            contactForm.reset();
-            
-            setTimeout(() => feedback.textContent = "", 4000);
+            feedback.textContent = "Küldés folyamatban...";
+
+            emailjs.sendForm('service_rz0ofi1', 'template_74yde49', contactForm)
+                .then(() => {
+                    feedback.textContent = "Üzenet sikeresen elküldve!";
+                    feedback.style.color = "var(--neon-green)";
+                    contactForm.reset();
+                })
+                .catch(() => {
+                    feedback.textContent = "Hiba történt a küldés során.";
+                    feedback.style.color = "#ff4d4d";
+                });
         });
     }
 });
