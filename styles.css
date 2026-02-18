@@ -50,9 +50,9 @@ h3,
 }
 
 .section-title {
-    font-size: clamp(1.5rem, 6vw, 2.5rem); /* Dinamikusan méreteződik */
+    font-size: clamp(1.5rem, 6vw, 2.5rem); 
     max-width: 100%;
-    word-wrap: break-word; /* Ha túl hosszú a szó, eltöri */
+    word-wrap: break-word; 
     text-shadow: var(--neon-glow);
     margin-bottom: 2rem;
     text-decoration: underline;
@@ -153,6 +153,22 @@ header {
     animation: blink-caret .75s step-end infinite;
 }
 
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-image img {
+    width: 300px; 
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px; 
+    border: 2px solid #39ff14; 
+    box-shadow: 0 0 15px #39ff14; 
+}
+
 .btn-neon {
     display: inline-block;
     padding: 12px 30px;
@@ -218,7 +234,6 @@ header {
     background: var(--neon-green);
     box-shadow: var(--neon-glow);
     width: 0;
-    /* JS állítja be */
     transition: width 1.5s ease-out;
 }
 
@@ -329,7 +344,7 @@ header {
         transform: translateY(-8px) rotate(-45deg);
     }
     .container {
-        width: 85%; /* Több hely a széleken */
+        width: 85%;
     }
 
     .hero-content h1 {
@@ -337,13 +352,16 @@ header {
     }
 
     .hero-content h2 {
-        white-space: normal; /* Mobilon ne legyen írógép effekt, mert szétnyomja a képernyőt */
+        white-space: normal; 
         animation: blink-caret .75s step-end infinite;
         border-right: none;
         text-align: center;
     }
+    .hero-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
 
-    /* Megakadályozzuk, hogy a szekciócímek lelógjanak */
     .section-title {
         display: block;
         text-align: center;
@@ -452,20 +470,16 @@ footer p {
 }
 
 .hero-content h2 {
-    font-size: clamp(0.9rem, 3.5vw, 1.5rem); /* Kisebb betűméret mobilon */
+    font-size: clamp(0.9rem, 3.5vw, 1.5rem);
     color: var(--text-light);
     margin: 0 auto 30px auto;
     border-right: 2px solid var(--neon-green);
     display: inline-block;
     padding-right: 10px;
-    
-    /* VÁLTOZÁS: Mobilon engedjük a törést, ha nagyon muszáj */
     white-space: normal; 
     width: auto;
     max-width: 100%;
     overflow: visible;
-    
-    /* Az animációt asztali nézetre korlátozzuk lentebb */
     animation: blink-caret .75s step-end infinite;
 }
 
